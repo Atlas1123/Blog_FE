@@ -21,7 +21,7 @@ const BlogPage: React.FC = (props) => {
 
     const titleRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 
-    const [allPagesNumber, setAllPagesNumber] = useState(0);
+    const [allPagesNumber, setAllPagesNumber] = useState<number>(0);
     const [pageIndex, setPageIndex] = useState<number>(1);
     const [itemCount, setItemCount] = useState<number>(5);
     const [sortType, setSortType] = useState<string>("blogs.createdAt");

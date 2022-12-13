@@ -42,21 +42,19 @@ const PaginationComponent: React.FC<Props> = ({
 
     const getPageNumbers = () => {
         if (allPagesNumber < 5) {
-            return Array.from(Array(allPagesNumber + 1).keys()).slice(1);
-            // let arr = [];
-            // for (let i = 1; i <= allPagesNumber; i++) {
-            //     arr.push(i);
-            // }
-            // return arr;
+            let arr = [];
+            for (let i = 1; i <= allPagesNumber; i++) {
+                arr.push(i);
+            }
+            return arr;
         } else if (currentPage <= 4) {
             return [1, 2, 3, 4, 5];
         } else if (currentPage > allPagesNumber - 4) {
-            return Array.from(Array(5).keys()).reverse().map(v => allPagesNumber - v);
-            // let arr = [];
-            // for (let i = 4; i >= 0; i--) {
-            //     arr.push(allPagesNumber - i);
-            // }
-            // return arr;
+            let arr = [];
+            for (let i = 4; i >= 0; i--) {
+                arr.push(allPagesNumber - i);
+            }
+            return arr;
         } else {
             return [currentPage -1, currentPage,
             currentPage + 1];
