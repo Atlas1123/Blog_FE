@@ -5,10 +5,21 @@ import * as React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { DAppProvider } from "@usedapp/core/dist/esm/src/providers";
+import { Mainnet, Config, ChainId, Goerli } from "@usedapp/core";
+import { getDefaultProvider } from 'ethers';
+
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { AuthProvider } from "./store/auth-context";
 import store from "./store";
+
+const config: Config = {
+    readOnlyChainId: Mainnet.chainId,
+    readOnlyUrls: {
+      [Mainnet.chainId]: getDefaultProvider('mainnet'),
+      [Goerli.chainId]: getDefaultProvider('goerli'),
+    },
+  }
 
 ReactDOM.render(
     <React.StrictMode>
@@ -17,7 +28,7 @@ ReactDOM.render(
                 <BrowserRouter>
                     <ColorModeScript />
                     <ChakraProvider theme={theme}>
-                        <DAppProvider config={{}}>
+                        <DAppProvider config={config}>
                         <App />
                         </DAppProvider>
                     </ChakraProvider>

@@ -2,12 +2,15 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { PATH } from "../../consts";
 
-import { Box, Text, Button, Select, Input } from "@chakra-ui/react";
+import { Box, Text, Button, Select, Input, useDisclosure } from "@chakra-ui/react";
 import { SearchIcon, ArrowUpIcon, ArrowDownIcon } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 
+import { useEthers, useEtherBalance } from "@usedapp/core";
+
 import PaginationComponent from "../../components/Pagination";
 import BlogSummeryComponent from "../../components/BlogSummery";
+import AccountModal from "../../components/AccountModal";
 
 import { fetchBlogs } from "../../store/blog-slice";
 import { RootState } from "../../store";
@@ -19,6 +22,8 @@ const BlogPage: React.FC = (props) => {
     const count  = useSelector((state: RootState) => state.blogs.count);
     const dispatch = useDispatch();
 
+    const { activateBrowserWallet } = useEthers();
+
     const titleRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 
     const [allPagesNumber, setAllPagesNumber] = useState<number>(0);
@@ -28,6 +33,8 @@ const BlogPage: React.FC = (props) => {
     const [sortOrder, setSortOrder] = useState<string>("desc");
     const [title, setTitle] = useState<string>("");
 
+    const { isOpen, onClose, onOpen } = useDisclosure();
+
     useEffect(() => {
         dispatch(fetchBlogs(pageIndex, itemCount, title, sortType, sortOrder));
     }, [dispatch, pageIndex, itemCount, title, sortType, sortOrder]);
@@ -35,6 +42,11 @@ const BlogPage: React.FC = (props) => {
     useEffect(() => {
         setAllPagesNumber(Math.ceil(count / itemCount));
     }, [count, itemCount]);
+
+    const handleActivateWallet = () => {
+        activateBrowserWallet();
+        onOpen();
+    }
 
     return (
         <>
@@ -46,6 +58,8 @@ const BlogPage: React.FC = (props) => {
                         <Link to={PATH.NEWBLOG}>
                         <Button type="button" color={"#fff"} bg={"black"} className="btn btn-primary">new blog</Button>
                         </Link>
+                        <Button type="button" ml={"2"} color={"#fff"} bg={"black"} onClick={handleActivateWallet} className="btn btn-primary">check my wallet</Button>
+                        <AccountModal isOpen={isOpen} onClose={onClose} />
                     </div>
                 </div>
                 <div className="main-page">
