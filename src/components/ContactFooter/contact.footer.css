@@ -1,0 +1,52 @@
+.contact-footer {
+    background-color: #f8f9fa;
+    padding: 100px 0;
+}
+
+.contact-footer .contact-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact-main .text {
+    width: 50%;
+}
+.contact-main .text h2 {
+    font-size: 23px;
+    font-weight: 700;
+}
+.contact-main .text p {
+    font-size: 16px;
+}
+
+.contact-main .contact {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    padding-left: 30px;
+}
+.contact-main .contact input {
+    width: 90%;
+    height: 50px;
+    /* border: 2px solid; */
+    border-radius: 25px;
+    padding: 5px 10px;
+    font-size: 17px;
+    box-shadow: 0px 0px 7px 0px black;
+    outline: none;
+}
+
+.contact-main .contact .contact-submit-btn {
+    width: 58px;
+    height: 50px;
+    padding: 0 5px;
+    border-radius: 25px;
+    background-color: black;
+    margin-left: 10px;
+}
+.contact-main .contact .contact-submit-btn img {
+    width: 50%;
+    margin: 0 auto;
+    
+}

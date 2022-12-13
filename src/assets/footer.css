@@ -1,0 +1,19 @@
+.footer {
+    padding: 30px;
+    width: 100%;
+    justify-content: center;
+}
+
+.footer p {
+    font-size: 16px;
+}
+
+.footer img {
+    display: inline;
+    width: 17px;
+    margin-right: 5px;
+}
+
+.footer span {
+    color: #8bc34a;
+}

@@ -1,0 +1,43 @@
+.main-blog-container {
+    width: 100%;
+    padding: 30px 0;
+}
+.blog-header-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.blog-header-bar > h1 {
+    padding: 20px 0;
+    display: inline-block;
+}
+
+.blog-header-bar > div {
+    display: inline-block;
+}
+
+.top-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.top-bar > div {
+    margin-right: 15px;
+}
+
+.blog-search-area button {
+    padding: 4px 15px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+}
+.blog-list-area {
+    margin-top: 30px;
+}
+/* .sort-order-area button {
+
+} */
+
