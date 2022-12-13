@@ -34,7 +34,7 @@ const BlogFormComponent: React.FC<Props> = ({ data, setData }) => {
     console.log(data)
     const titleRef = useRef() as React.MutableRefObject<HTMLInputElement>;
     const textRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
-    const [imageUrl, setImageUrl] = useState("");
+    const [imageUrl, setImageUrl] = useState<string>("");
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();

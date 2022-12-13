@@ -1,6 +1,6 @@
 // node_modules
 import React, { useEffect, useState } from "react";
-import { Box, Text, Button, Input } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 
 // props type
 type Props = {

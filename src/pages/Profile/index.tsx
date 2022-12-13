@@ -53,17 +53,14 @@ const ProfilePage = () => {
 
     const me = useSelector((state: RootState) => state.me.me);
     const [userData, setUserData] = useState(authContext.userData);
-    const [oldPassword, setOldPassword] = useState("");
-    const [newPassword, setNewPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [imageUrl, setImageUrl] = useState(me.photoUrl);
+    const [oldPassword, setOldPassword] = useState<string>("");
+    const [newPassword, setNewPassword] = useState<string>("");
+    const [confirmPassword, setConfirmPassword] = useState<string>("");
+    const [imageUrl, setImageUrl] = useState<string>(me.photoUrl);
 
-    const [oldPasswordError, setOldPasswordError] = useState(true);
-    const [newPasswordError, setNewPasswordError] = useState(true);
-    const [confirmPasswordError, setConfirmPasswordError] = useState(true);
-
-    const [walletPubkey, setWalletPubkey] = useState("");
-    const [myEth, setMyEth] = useState("");
+    const [oldPasswordError, setOldPasswordError] = useState<boolean>(true);
+    const [newPasswordError, setNewPasswordError] = useState<boolean>(true);
+    const [confirmPasswordError, setConfirmPasswordError] = useState<boolean>(true);
 
     useEffect(() => {
         setOldPasswordError(newPassword && !oldPassword ? true : false);

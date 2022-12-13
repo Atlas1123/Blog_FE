@@ -46,7 +46,7 @@ export const AuthProvider: React.FC = (props) => {
         ? calculateRemainingTime(storedExpirationDate)
         : 0;
 
-    const [token, setToken] = useState(storedToken);
+    const [token, setToken] = useState<string>(storedToken);
     const [userData, setUserData] = useState({
         id: "",
         username: "",
