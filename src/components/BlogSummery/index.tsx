@@ -1,16 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";;
+import { PATH } from "../../consts";
 import { Heading, Box, Flex, Text } from "@chakra-ui/react";
 import { ThumbUp } from "@material-ui/icons";
 
 import Blog from "../../models/Blog";
 
-import { PATH } from "../../consts";
-
 // import { UPLOAD_PATH }
-import "./blog.summery.css";
 import { BASE_SERVER_API_URL } from "../../config";
 
+import "./blog.summery.css";
 import starImg from "../../assets/images/star.svg";
 
 type Props = {

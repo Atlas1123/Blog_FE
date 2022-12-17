@@ -37,7 +37,8 @@
 .blog-list-area {
     margin-top: 30px;
 }
-/* .sort-order-area button {
 
-} */
+.blog-base-list .blog-single .content-area a {
+    text-decoration: underline;
+}
 

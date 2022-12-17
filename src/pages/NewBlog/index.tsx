@@ -12,6 +12,9 @@ import BlogFormComponent from "../../components/BlogForm";
 
 // consts
 import { PATH } from "../../consts";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const NewBlogPage = () => {
     const API_URL = process.env.REACT_APP_BLOG_API_URL || SERVER_API_URL;

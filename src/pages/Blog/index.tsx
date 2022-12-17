@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { PATH } from "../../consts";
 
-import { Box, Text, Button, Select, Input } from "@chakra-ui/react";
+import { Box, Text, Button, Select, Input, useDisclosure } from "@chakra-ui/react";
 import { SearchIcon, ArrowUpIcon, ArrowDownIcon } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -27,6 +27,8 @@ const BlogPage: React.FC = (props) => {
     const [sortType, setSortType] = useState<string>("blogs.createdAt");
     const [sortOrder, setSortOrder] = useState<string>("desc");
     const [title, setTitle] = useState<string>("");
+
+    const { isOpen, onClose, onOpen } = useDisclosure();
 
     useEffect(() => {
         dispatch(fetchBlogs(pageIndex, itemCount, title, sortType, sortOrder));

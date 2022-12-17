@@ -8,8 +8,6 @@
         "@chakra-ui/react": "^1.6.5",
         "@emotion/react": "^11.9.0",
         "@emotion/styled": "^11.8.1",
-        "@ethersproject/abi": "^5.2.0",
-        "@ethersproject/contracts": "^5.2.0",
         "@material-ui/core": "^4.12.4",
         "@material-ui/icons": "^4.11.3",
         "@metamask/jazzicon": "^2.0.0",
@@ -27,6 +25,7 @@
         "@types/react-dom": "^16.9.14",
         "@types/react-router-dom": "^5.1.8",
         "@usedapp/core": "^1.2.2",
+        "dotenv": "^16.0.3",
         "ethers": "^5.7.2",
         "framer-motion": "^4.1.17",
         "gh-pages": "^3.2.3",
@@ -39,7 +38,8 @@
         "react-scripts": "4.0.3",
         "ts-react-google-login-component": "^1.1.9",
         "typescript": "^3.9.10",
-        "web-vitals": "^0.2.4"
+        "web-vitals": "^0.2.4",
+        "web3": "^1.8.1"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -73,5 +73,16 @@
     "author": "Mr Dev - Furuya Nobuo",
     "devDependencies": {
         "webpack-cli": "^4.9.2"
+    },
+    "devServer": { 
+        "inline": true, 
+        "contentBase": "./dist", 
+        "port": 8001, 
+        "proxy": { 
+            "/api/vi/**": { 
+                "target": "http://localhost:8001", 
+                "secure": false 
+            }  
+        }
     }
 }

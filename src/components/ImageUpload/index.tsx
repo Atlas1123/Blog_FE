@@ -2,6 +2,9 @@ import React from "react";
 import { Input, useColorMode } from "@chakra-ui/react";
 import { SERVER_API_URL } from "../../config";
 import ApiError from "../../models/ApiError";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 type Props = {
     setData: Function
