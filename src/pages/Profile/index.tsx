@@ -35,6 +35,9 @@ import { SERVER_API_URL, BASE_SERVER_API_URL } from "../../config";
 
 // consts
 import { PATH } from "../../consts";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const ProfilePage = () => {
     const API_URL = process.env.REACT_APP_BLOG_API_URL || SERVER_API_URL;

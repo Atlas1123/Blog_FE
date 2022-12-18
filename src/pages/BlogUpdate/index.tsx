@@ -19,6 +19,9 @@ import { PATH } from "../../consts";
 
 // config
 import { SERVER_API_URL } from "../../config";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const UpdateBlogPage = () => {
     const API_URL = process.env.REACT_APP_BLOG_API_URL || SERVER_API_URL;
